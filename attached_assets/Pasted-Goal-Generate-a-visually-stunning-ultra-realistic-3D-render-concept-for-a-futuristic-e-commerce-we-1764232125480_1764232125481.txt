@@ -1,0 +1,34 @@
+Goal: Generate a visually stunning, ultra-realistic 3D render concept for a futuristic e-commerce website interface specializing in smart gadgets. The scene should convey immersion, cleanliness, and high technology.
+
+Style & Medium:
+Ultra-detailed 3D render, Photorealistic, Octane Render, Ray Tracing, 8K resolution. Cinematic lighting, soft shadows, and subtle volumetric light effects.
+
+Scene & Environment:
+A minimalist, zero-gravity environment or a sleek, dark-mode digital platform. The background should be a subtle gradient of deep indigo and cyan, suggesting a digital space, with faint, glowing geometric wireframes (like a loose grid system). The scene should feel expansive and professional.
+
+Key Elements (The Gadgets and UI):
+
+Product Focus: The central focus is a collection of 5-7 floating smart gadgets (e.g., a sleek smartwatch, a minimalist wireless earbud case, a transparent smart speaker, a foldable phone). They should be rotating slowly to showcase their form factors.
+
+Holographic Interface: A translucent, holographic user interface (UI) surrounds the products. The UI elements should be clean lines, glowing text (neon blue/white), and circular/curved navigation menus. Avoid harsh, boxy traditional website elements.
+
+Interactive Elements: Display a prominent call-to-action button, labeled "Explore 360° View" or "Add to Cart," rendered as a smooth, depth-of-field-blurring button with a subtle pulse effect.
+
+Product Information: Display holographic cards or panels next to the main products, showing minimal text (e.g., "AI Speaker Pro," "$299," "9,000+ Reviews") in a modern, clean sans-serif font.
+
+Motion: Suggest subtle movement—tiny energy particles or digital dust motes should float around the gadgets to imply a dynamic, live environment.
+
+Aesthetics & Mood:
+
+Color Palette: Dominated by cool, high-tech colors: deep blues, cyan, electric neon highlights, matte black, and chrome/brushed aluminum textures on the gadgets.
+
+Mood: Futuristic, premium, sophisticated, and intuitive.
+
+Texture: High contrast between the matte black background and the reflective, metallic surfaces of the gadgets.
+
+Camera & Composition:
+Wide-angle, mid-level shot, focusing on the cluster of gadgets in the center, with the holographic UI fading slightly into the periphery, guiding the eye toward the main products. Shallow depth of field to emphasize the floating elements.
+
+Negative Prompts (Optional, to avoid unwanted elements):
+
+Text, words, letters, signatures, blurry, low-res, cartoon, anime, vintage, retro, messy cables, wires.
