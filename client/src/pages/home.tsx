@@ -8,11 +8,15 @@ import smartwatchImg from "@assets/generated_images/sleek_futuristic_smartwatch_
 import earbudsImg from "@assets/generated_images/minimalist_wireless_earbuds_3d_render.png";
 import speakerImg from "@assets/generated_images/transparent_smart_speaker_3d_render.png";
 import phoneImg from "@assets/generated_images/futuristic_foldable_phone_3d_render.png";
+import ringImg from "@assets/generated_images/futuristic_hexagonal_smart_ring_3d_render.png";
+import glassesImg from "@assets/generated_images/futuristic_ar_smart_glasses_3d_render.png";
 
 const gadgets = [
   { id: 1, name: "AEROBUDS PRO", price: "$199", image: earbudsImg, specs: "Noise Cancel · 48h Batt" },
   { id: 2, name: "SONIC PRISM", price: "$299", image: speakerImg, specs: "Hi-Res Audio · Holographic" },
   { id: 3, name: "NEXUS FOLD", price: "$1299", image: phoneImg, specs: "8k Display · Neural Chip" },
+  { id: 4, name: "HEXACORE RING", price: "$399", image: ringImg, specs: "Biometric · Always-On" },
+  { id: 5, name: "PRISM VISION", price: "$899", image: glassesImg, specs: "AR Display · Neural Link" },
 ];
 
 export default function Home() {
@@ -190,7 +194,7 @@ export default function Home() {
             <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {gadgets.map((gadget, index) => (
               <HolographicCard key={gadget.id} delay={index * 0.2} className="group cursor-pointer">
                 <div className="relative aspect-square mb-6 flex items-center justify-center bg-gradient-to-b from-white/5 to-transparent rounded-lg overflow-hidden">
