@@ -10,14 +10,14 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2 group">
+          <div className="flex items-center gap-2 group cursor-pointer">
             <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center group-hover:animate-pulse-glow">
               <div className="w-3 h-3 bg-black rounded-full" />
             </div>
             <span className="font-display font-bold text-xl tracking-widest text-white">
               NEURO<span className="text-primary">GADGET</span>
             </span>
-          </a>
+          </div>
         </Link>
 
         {/* Desktop Links */}

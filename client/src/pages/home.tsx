@@ -194,7 +194,7 @@ export default function Home() {
             <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-8 max-w-6xl mx-auto">
             {gadgets.map((gadget, index) => (
               <HolographicCard key={gadget.id} delay={index * 0.2} className="group cursor-pointer">
                 <div className="relative aspect-square mb-6 flex items-center justify-center bg-gradient-to-b from-white/5 to-transparent rounded-lg overflow-hidden">
