@@ -29,7 +29,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center perspective-1000">
+      <section className="relative h-screen flex items-center justify-center perspective-1000 overflow-hidden">
         {/* Background */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center opacity-60"
@@ -182,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* Product Grid Section */}
-      <section className="py-32 relative z-10">
+      <section className="py-32 relative z-20 bg-background mt-32">
         <div className="container max-w-7xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
