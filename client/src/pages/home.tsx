@@ -25,7 +25,7 @@ export default function Home() {
   const y2 = useTransform(scrollY, [0, 500], [0, -100]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary/30">
+    <div className="bg-background text-foreground selection:bg-primary/30">
       <Navbar />
 
       {/* Hero Section */}
@@ -182,7 +182,7 @@ export default function Home() {
       </section>
 
       {/* Product Grid Section */}
-      <section className="py-32 relative z-20 bg-background mt-32">
+      <section className="py-32 relative bg-background">
         <div className="container max-w-7xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
