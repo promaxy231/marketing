@@ -1,7 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { HolographicCard } from "@/components/ui/HolographicCard";
-import { ArrowRight, Plus, Cpu, Wifi, Battery } from "lucide-react";
+import { Product3D } from "@/components/ui/Product3D";
+import { ArrowRight, Plus, Cpu, Wifi, Battery, Layers } from "lucide-react";
 
 import bgImage from "@assets/generated_images/futuristic_deep_indigo_and_cyan_wireframe_background.png";
 import smartwatchImg from "@assets/generated_images/sleek_futuristic_smartwatch_3d_render.png";
@@ -12,14 +14,15 @@ import ringImg from "@assets/generated_images/futuristic_hexagonal_smart_ring_3d
 import glassesImg from "@assets/generated_images/futuristic_ar_smart_glasses_3d_render.png";
 
 const gadgets = [
-  { id: 1, name: "AEROBUDS PRO", price: "$199", image: earbudsImg, specs: "Noise Cancel · 48h Batt" },
-  { id: 2, name: "SONIC PRISM", price: "$299", image: speakerImg, specs: "Hi-Res Audio · Holographic" },
-  { id: 3, name: "NEXUS FOLD", price: "$1299", image: phoneImg, specs: "8k Display · Neural Chip" },
-  { id: 4, name: "HEXACORE RING", price: "$399", image: ringImg, specs: "Biometric · Always-On" },
-  { id: 5, name: "PRISM VISION", price: "$899", image: glassesImg, specs: "AR Display · Neural Link" },
+  { id: 1, name: "AEROBUDS PRO", price: "$199", image: earbudsImg, specs: "Noise Cancel · 48h Batt", modelType: "earbuds" as const },
+  { id: 2, name: "SONIC PRISM", price: "$299", image: speakerImg, specs: "Hi-Res Audio · Holographic", modelType: "speaker" as const },
+  { id: 3, name: "NEXUS FOLD", price: "$1299", image: phoneImg, specs: "8k Display · Neural Chip", modelType: "phone" as const },
+  { id: 4, name: "HEXACORE RING", price: "$399", image: ringImg, specs: "Biometric · Always-On", modelType: "ring" as const },
+  { id: 5, name: "PRISM VISION", price: "$899", image: glassesImg, specs: "AR Display · Neural Link", modelType: "glasses" as const },
 ];
 
 export default function Home() {
+  const [view3D, setView3D] = useState(true);
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 100]);
   const y2 = useTransform(scrollY, [0, 500], [0, -100]);
@@ -192,18 +195,46 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">ECOSYSTEM</h2>
             <div className="h-1 w-20 bg-primary mx-auto rounded-full" />
+            
+            <div className="flex justify-center gap-4 mt-8">
+              <button
+                onClick={() => setView3D(true)}
+                className={`px-6 py-2 font-tech tracking-wider text-sm rounded-lg transition-all border ${
+                  view3D 
+                    ? "bg-primary/20 border-primary text-primary" 
+                    : "bg-transparent border-white/20 text-gray-400 hover:border-white/40"
+                }`}
+              >
+                <Layers className="w-4 h-4 inline mr-2" />
+                3D MODELS
+              </button>
+              <button
+                onClick={() => setView3D(false)}
+                className={`px-6 py-2 font-tech tracking-wider text-sm rounded-lg transition-all border ${
+                  !view3D 
+                    ? "bg-primary/20 border-primary text-primary" 
+                    : "bg-transparent border-white/20 text-gray-400 hover:border-white/40"
+                }`}
+              >
+                RENDERS
+              </button>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-8 max-w-6xl mx-auto">
             {gadgets.map((gadget, index) => (
-              <HolographicCard key={gadget.id} delay={index * 0.2} className="group cursor-pointer">
-                <div className="relative aspect-square mb-6 flex items-center justify-center bg-gradient-to-b from-white/5 to-transparent rounded-lg overflow-hidden">
-                  <motion.img 
-                    src={gadget.image} 
-                    alt={gadget.name}
-                    className="w-3/4 object-contain transition-transform duration-700 group-hover:scale-110"
-                    whileHover={{ rotate: 5 }}
-                  />
+              <HolographicCard key={gadget.id} delay={index * 0.2} className="group cursor-pointer flex flex-col h-full">
+                <div className="relative flex-1 mb-6 flex items-center justify-center bg-gradient-to-b from-white/5 to-transparent rounded-lg overflow-hidden">
+                  {view3D ? (
+                    <Product3D type={gadget.modelType} color="#00ffff" />
+                  ) : (
+                    <motion.img 
+                      src={gadget.image} 
+                      alt={gadget.name}
+                      className="w-3/4 object-contain transition-transform duration-700 group-hover:scale-110"
+                      whileHover={{ rotate: 5 }}
+                    />
+                  )}
                   
                   {/* Add Overlay */}
                   <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -213,7 +244,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2 mt-auto">
                   <div className="flex justify-between items-start">
                     <h3 className="text-2xl font-display font-bold">{gadget.name}</h3>
                     <span className="text-primary font-tech text-xl">{gadget.price}</span>
