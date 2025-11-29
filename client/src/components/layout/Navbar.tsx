@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Search, ShoppingBag, Menu } from "lucide-react";
+import { ShoppingBag, Menu } from "lucide-react";
 import { useState } from "react";
 
 export function Navbar() {
@@ -11,18 +11,18 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center group-hover:animate-pulse-glow">
-              <div className="w-3 h-3 bg-black rounded-full" />
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span className="text-xs font-bold text-black">PV</span>
             </div>
-            <span className="font-display font-bold text-xl tracking-widest text-white">
-              NEURO<span className="text-primary">GADGET</span>
+            <span className="font-space-grotesk font-bold text-lg tracking-tight text-white">
+              Pocket<span className="text-primary">Vibe</span>
             </span>
           </div>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 font-tech text-lg tracking-wide text-gray-300">
-          {["PRODUCTS", "TECHNOLOGY", "SUPPORT"].map((item) => (
+        <div className="hidden md:flex items-center gap-8 font-outfit text-sm tracking-wide text-gray-300">
+          {["FEATURES", "STORIES", "FAQ"].map((item) => (
             <a
               key={item}
               href="#"
@@ -36,9 +36,6 @@ export function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-6">
-          <button className="text-gray-300 hover:text-primary transition-colors">
-            <Search className="w-5 h-5" />
-          </button>
           <button className="relative text-gray-300 hover:text-primary transition-colors group">
             <ShoppingBag className="w-5 h-5" />
             <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_var(--color-primary)]" />
@@ -55,11 +52,11 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-black/90 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {["PRODUCTS", "TECHNOLOGY", "SUPPORT"].map((item) => (
+          {["FEATURES", "STORIES", "FAQ"].map((item) => (
             <a
               key={item}
               href="#"
-              className="font-tech text-xl text-gray-300 hover:text-primary"
+              className="font-outfit text-lg text-gray-300 hover:text-primary"
             >
               {item}
             </a>
