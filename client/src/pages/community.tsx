@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { MessageCircle, Heart, Users, TrendingUp } from "lucide-react";
+import { WaveformVisualizer } from "@/components/3d/WaveformVisualizer";
+import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const challenges = [
   { title: "30-Day Calm Challenge", members: 12500, progress: 65, emoji: "🧘" },
@@ -27,8 +31,9 @@ export default function Community() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="container max-w-6xl mx-auto">
+      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
+        <FloatingBubbles count={5} />
+        <div className="container max-w-6xl mx-auto relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,10 +74,30 @@ export default function Community() {
         </div>
       </section>
 
-      {/* Challenges */}
-      <section className="py-16 px-6">
+      {/* 3D Waveform Visualizer */}
+      <section className="relative py-20 px-6 overflow-hidden">
         <div className="container max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold mb-8">Community Challenges</h2>
+          <div className="relative h-96 rounded-3xl card-premium overflow-hidden">
+            <WaveformVisualizer />
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/50 to-transparent">
+              <motion.div 
+                className="text-center z-10"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-4xl font-display font-semibold text-white mb-3">Feel the Connection</h3>
+                <p className="text-white/80 text-lg">5 million meditators in harmony</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Challenges */}
+      <section className="py-16 px-6 relative">
+        <div className="container max-w-6xl mx-auto relative z-10">
+          <h2 className="text-3xl font-display font-semibold mb-8 text-gradient">Community Challenges</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {challenges.map((challenge, i) => (
               <motion.div
@@ -167,6 +192,8 @@ export default function Community() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
