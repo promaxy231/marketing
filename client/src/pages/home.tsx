@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Heart, Leaf, Moon, Smile, ChevronRight, CheckCircle2 } from "lucide-react";
 
 import appUI from "@assets/generated_images/zenflow_meditation_app_ui_mockup.png";
@@ -330,6 +331,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
