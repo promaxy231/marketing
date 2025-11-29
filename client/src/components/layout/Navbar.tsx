@@ -15,14 +15,14 @@ export function Navbar() {
               <span className="text-xs font-bold text-black">PV</span>
             </div>
             <span className="font-space-grotesk font-bold text-lg tracking-tight text-white">
-              Pocket<span className="text-primary">Vibe</span>
+              ZEN<span className="text-primary">FLOW</span>
             </span>
           </div>
         </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 font-outfit text-sm tracking-wide text-gray-300">
-          {["FEATURES", "STORIES", "FAQ"].map((item) => (
+          {["MEDITATE", "COMMUNITY", "BLOG"].map((item) => (
             <a
               key={item}
               href="#"
@@ -52,7 +52,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-black/90 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {["FEATURES", "STORIES", "FAQ"].map((item) => (
+          {["MEDITATE", "COMMUNITY", "BLOG"].map((item) => (
             <a
               key={item}
               href="#"
