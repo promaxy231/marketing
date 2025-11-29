@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Heart, Leaf, Moon, Smile, ChevronRight, CheckCircle2 } from "lucide-react";
+import { ParticleBackground } from "@/components/3d/ParticleBackground";
+import { MeditationSphere } from "@/components/3d/MeditationSphere";
 
 import appUI from "@assets/generated_images/zenflow_meditation_app_ui_mockup.png";
 import meditationLife from "@assets/generated_images/girl_meditating_with_zenflow_app.png";
@@ -30,6 +32,7 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="bg-background text-foreground">
+      <ParticleBackground />
       <Navbar />
 
       {/* Hero Section */}

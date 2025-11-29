@@ -43,6 +43,26 @@ export default function Meditate() {
         </div>
       </section>
 
+      {/* 3D Meditation Sphere */}
+      <section className="relative py-20 px-6 overflow-hidden">
+        <div className="container max-w-6xl mx-auto">
+          <div className="relative h-96 rounded-3xl card-premium overflow-hidden">
+            <MeditationSphere />
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/40 to-transparent">
+              <motion.div 
+                className="text-center z-10"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-4xl font-display font-semibold text-white mb-3">Enter the Flow</h3>
+                <p className="text-white/80 text-lg">Feel the calm, immersive meditation experience</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Sessions */}
       <section className="py-16 px-6 relative">
         <div className="container max-w-6xl mx-auto">
