@@ -6,23 +6,23 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-foreground/10 bg-white/30 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-              <span className="text-xs font-bold text-black">PV</span>
+            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+              <span className="text-xs font-bold text-primary">Z</span>
             </div>
-            <span className="font-space-grotesk font-bold text-lg tracking-tight text-white">
+            <span className="font-display font-semibold text-lg tracking-tight text-foreground">
               ZEN<span className="text-primary">FLOW</span>
             </span>
           </div>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 font-outfit text-sm tracking-wide text-gray-300">
-          {["MEDITATE", "COMMUNITY", "BLOG"].map((item) => (
+        <div className="hidden md:flex items-center gap-8 font-outfit text-sm tracking-wide text-foreground/70">
+          {["Meditate", "Community", "Blog"].map((item) => (
             <a
               key={item}
               href="#"
@@ -36,12 +36,14 @@ export function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-6">
-          <button className="relative text-gray-300 hover:text-primary transition-colors group">
-            <ShoppingBag className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_var(--color-primary)]" />
+          <button className="hidden sm:inline px-6 py-2 text-sm font-outfit font-semibold text-primary hover:text-primary/70 transition-colors">
+            Sign In
+          </button>
+          <button className="px-6 py-2 bg-primary text-white text-sm font-outfit font-semibold rounded-full hover:shadow-md hover:shadow-primary/20 transition-all">
+            Start Free
           </button>
           <button 
-            className="md:hidden text-gray-300"
+            className="md:hidden text-foreground"
             onClick={() => setIsOpen(!isOpen)}
           >
             <Menu className="w-6 h-6" />
@@ -51,16 +53,19 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-black/90 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {["MEDITATE", "COMMUNITY", "BLOG"].map((item) => (
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-white/50 backdrop-blur-md border-b border-foreground/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
+          {["Meditate", "Community", "Blog"].map((item) => (
             <a
               key={item}
               href="#"
-              className="font-outfit text-lg text-gray-300 hover:text-primary"
+              className="font-outfit text-lg text-foreground hover:text-primary"
             >
               {item}
             </a>
           ))}
+          <button className="mt-4 px-6 py-2 bg-primary text-white font-outfit font-semibold rounded-full">
+            Start Free
+          </button>
         </div>
       )}
     </nav>

@@ -1,203 +1,227 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
-import { ArrowRight, Brain, Users, Zap, TrendingUp } from "lucide-react";
+import { Heart, Leaf, Moon, Sun, Smile } from "lucide-react";
 
 import appUI from "@assets/generated_images/zenflow_meditation_app_ui_mockup.png";
 import meditationLife from "@assets/generated_images/girl_meditating_with_zenflow_app.png";
 import dashboard from "@assets/generated_images/zenflow_community_dashboard.png";
 
-const features = [
-  { icon: Brain, label: "AI Personalized", desc: "Sessions tailored to you" },
-  { icon: Users, label: "Million+ Community", desc: "Share your journey" },
-  { icon: Zap, label: "Instant Calm", desc: "Results in 5 minutes" },
-  { icon: TrendingUp, label: "Track Growth", desc: "Your wellness wins" },
+const sessions = [
+  { emoji: "🌅", name: "Morning Clarity", duration: "5 min", desc: "Start your day centered" },
+  { emoji: "🌊", name: "Midday Reset", duration: "10 min", desc: "Find your balance" },
+  { emoji: "🌙", name: "Evening Peace", duration: "15 min", desc: "Rest your mind" },
+  { emoji: "💫", name: "Deep Sleep", duration: "20 min", desc: "Drift into calm" },
+];
+
+const benefits = [
+  { icon: Heart, label: "Reduce Anxiety", desc: "Find calm within minutes" },
+  { icon: Moon, label: "Better Sleep", desc: "Drift peacefully" },
+  { icon: Leaf, label: "Clear Mind", desc: "Quiet the noise" },
+  { icon: Smile, label: "Daily Joy", desc: "Build lasting happiness" },
 ];
 
 export default function Home() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 100]);
-
   return (
-    <div className="bg-background text-foreground selection:bg-primary/30">
+    <div className="bg-background text-foreground">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-secondary/5 to-background" />
-        
-        {/* Animated Grid Background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,255,.1)_25%,rgba(0,255,255,.1)_50%,transparent_50%,transparent_75%,rgba(0,255,255,.1)_75%,rgba(0,255,255,.1))] bg-[50px_50px] animate-[slide_20s_linear_infinite]" />
-        </div>
+        {/* Soft gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/8 via-secondary/5 to-background opacity-60" />
 
         <div className="container max-w-6xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <div className="space-y-4">
-              <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
-                <span className="text-primary font-outfit text-sm font-bold tracking-wider">✨ TRENDING NOW</span>
+            <div className="space-y-6">
+              <div className="inline-block">
+                <span className="text-primary font-display text-sm font-semibold tracking-wide">Your moment of peace</span>
               </div>
               
-              <h1 className="text-6xl md:text-7xl font-space-grotesk font-bold leading-tight">
-                Peace is <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary text-glow">Trending</span>
+              <h1 className="text-6xl md:text-7xl font-display font-light leading-tight text-foreground">
+                Breathe. <span className="font-semibold text-primary">Find.</span> Flow.
               </h1>
               
-              <p className="text-xl text-gray-300 font-outfit leading-relaxed max-w-lg">
-                AI-powered meditation meets real community. Five minutes to calm. Lifetime of growth. Join millions of Gen Z finding their vibe.
+              <p className="text-lg text-foreground/70 font-outfit leading-relaxed max-w-lg">
+                Meditation tailored to your moment. Whether you have 5 minutes or an hour, we're here to guide you to calm.
               </p>
             </div>
 
-            {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-4">
-              <div>
-                <div className="text-3xl font-bold font-space-grotesk text-primary">5M+</div>
-                <div className="text-xs text-gray-400 font-outfit mt-1">Active Users</div>
+            {/* Key Highlights */}
+            <div className="space-y-3 pt-4">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-sm font-outfit text-foreground/80">1,000+ guided sessions</span>
               </div>
-              <div>
-                <div className="text-3xl font-bold font-space-grotesk text-primary">99%</div>
-                <div className="text-xs text-gray-400 font-outfit mt-1">Daily Return</div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-sm font-outfit text-foreground/80">AI learns what works for you</span>
               </div>
-              <div>
-                <div className="text-3xl font-bold font-space-grotesk text-primary">∞</div>
-                <div className="text-xs text-gray-400 font-outfit mt-1">Free Sessions</div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-sm font-outfit text-foreground/80">Join 5 million people finding peace</span>
               </div>
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-4 pt-6">
-              <button className="group relative px-8 py-4 bg-primary text-black font-space-grotesk font-bold tracking-wider overflow-hidden rounded-lg hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] transition-all">
-                <span className="relative z-10 flex items-center gap-2">
-                  START BREATHING <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
+            <div className="flex flex-col sm:flex-row items-start gap-4 pt-8">
+              <button className="px-8 py-4 bg-primary text-white font-outfit font-semibold rounded-full hover:shadow-lg hover:shadow-primary/20 transition-all">
+                Start Free
               </button>
-              <button className="px-8 py-4 border border-white/20 text-white font-outfit tracking-wider hover:border-primary/50 transition-colors rounded-lg">
+              <button className="px-8 py-4 border-2 border-primary/30 text-foreground font-outfit font-semibold rounded-full hover:border-primary/60 transition-colors">
                 Learn More
               </button>
             </div>
 
             {/* Social Proof */}
-            <div className="pt-4 border-t border-white/10">
-              <p className="text-xs text-gray-500 font-outfit">⭐⭐⭐⭐⭐ "Changed my mental health" - 500K+ reviews</p>
+            <div className="pt-6 border-t border-foreground/10">
+              <p className="text-xs text-foreground/60 font-outfit">Recommended by therapists • Trusted by wellness experts</p>
             </div>
           </motion.div>
 
-          {/* Hero Image */}
+          {/* Hero Visualization */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
+            {/* Breathing Circles */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <motion.div className="absolute w-80 h-80 rounded-full border-2 border-primary/20 breathe-ring" />
+              <motion.div className="absolute w-96 h-96 rounded-full border border-secondary/10 breathe-ring" style={{ animationDelay: '0.5s' }} />
+            </div>
+
             <div className="relative z-10">
               <img 
                 src={appUI} 
-                alt="ZENFLOW App UI" 
-                className="w-full rounded-2xl shadow-2xl border border-white/10"
+                alt="ZENFLOW App" 
+                className="w-full rounded-3xl shadow-lg border border-foreground/10"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-2xl pointer-events-none" />
             </div>
-            
-            {/* Floating Badge */}
-            <motion.div 
-              className="absolute -bottom-6 right-6 bg-black/80 backdrop-blur-xl border border-primary/50 p-4 rounded-lg z-20 shadow-xl"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
-                <div>
-                  <div className="text-xs text-primary font-outfit font-bold">#1 WELLNESS</div>
-                  <div className="text-lg font-space-grotesk font-bold">In Gen Z</div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
 
         {/* Scroll Indicator */}
         <motion.div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="text-[10px] tracking-[0.2em]">SCROLL TO EXPLORE</div>
-          <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
+          <div className="text-xs tracking-widest text-foreground/50">SCROLL</div>
+          <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-px h-8 bg-primary/30" />
         </motion.div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 relative bg-black/40 backdrop-blur">
-        <div className="container max-w-6xl mx-auto px-6">
+      {/* Quick Sessions */}
+      <section className="py-24 px-6 relative">
+        <div className="container max-w-6xl mx-auto">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold mb-4">Why ZENFLOW Hits Different</h2>
-            <div className="h-1 w-24 bg-primary mx-auto rounded-full" />
+            <h2 className="text-4xl md:text-5xl font-display font-light mb-4">
+              Pick your <span className="font-semibold text-primary">moment</span>
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">Meditation that fits your life, not the other way around</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, i) => (
-              <motion.div 
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {sessions.map((session, i) => (
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group p-6 rounded-xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all"
+                className="card-soft group cursor-pointer hover:shadow-md hover:border-primary/30 transition-all"
               >
-                <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-lg font-space-grotesk font-bold mb-2">{feature.label}</h3>
-                <p className="text-sm text-gray-400 font-outfit">{feature.desc}</p>
+                <div className="text-5xl mb-4">{session.emoji}</div>
+                <h3 className="text-lg font-display font-semibold mb-1 text-foreground">{session.name}</h3>
+                <p className="text-sm text-primary font-semibold mb-3">{session.duration}</p>
+                <p className="text-sm text-foreground/70">{session.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section className="py-24 relative">
-        <div className="container max-w-6xl mx-auto px-6">
+      {/* Benefits Section */}
+      <section className="py-24 px-6 bg-gradient-to-b from-primary/5 to-secondary/5">
+        <div className="container max-w-6xl mx-auto">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold mb-4">See the Difference</h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-outfit">From stressed to blessed. Real stories from real users.</p>
+            <h2 className="text-4xl md:text-5xl font-display font-light mb-4">
+              Feel the <span className="font-semibold text-primary">difference</span>
+            </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              { title: "Find Your Flow", img: meditationLife, emoji: "🧘" },
-              { title: "Grow Together", img: dashboard, emoji: "🌱" },
-            ].map((section, i) => (
-              <motion.div 
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, i) => (
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 hover:border-primary/50 transition-all"
+                className="card-soft text-center p-8"
+              >
+                <benefit.icon className="w-12 h-12 text-primary mx-auto mb-4" />
+                <h3 className="text-lg font-semibold mb-2 text-foreground">{benefit.label}</h3>
+                <p className="text-sm text-foreground/70">{benefit.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stories Section */}
+      <section className="py-24 px-6">
+        <div className="container max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-display font-light mb-4">
+              Real stories, <span className="font-semibold text-primary">real calm</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              { title: "Find Your Flow", img: meditationLife, story: "Meditation that meets you where you are" },
+              { title: "Grow Together", img: dashboard, story: "Connect with a community that understands" },
+            ].map((section, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative overflow-hidden rounded-3xl border border-foreground/10 card-soft overflow-hidden cursor-pointer"
               >
                 <img 
                   src={section.img} 
                   alt={section.title}
-                  className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-8">
                   <div>
-                    <div className="text-4xl mb-2">{section.emoji}</div>
-                    <h3 className="text-2xl font-space-grotesk font-bold">{section.title}</h3>
+                    <h3 className="text-2xl font-display font-semibold text-white mb-1">{section.title}</h3>
+                    <p className="text-white/80 text-sm">{section.story}</p>
                   </div>
                 </div>
               </motion.div>
@@ -207,19 +231,21 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 relative bg-gradient-to-r from-primary/10 via-transparent to-secondary/10 border-y border-white/10">
-        <div className="container max-w-4xl mx-auto px-6 text-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+      <section className="py-24 px-6 bg-gradient-to-r from-primary/10 via-secondary/5 to-accent/10 border-t border-foreground/10">
+        <div className="container max-w-3xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-space-grotesk font-bold mb-6">Your Calm Awaits</h2>
-            <p className="text-xl text-gray-300 font-outfit mb-8 max-w-2xl mx-auto">
-              Join millions finding peace. No credit card. No pressure. Just breathe.
+            <h2 className="text-5xl md:text-6xl font-display font-light mb-6">
+              Your calm <span className="font-semibold text-primary">awaits</span>
+            </h2>
+            <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+              No credit card needed. Start free. 5 minutes could change everything.
             </p>
-            <button className="px-10 py-5 bg-primary text-black font-space-grotesk font-bold text-lg tracking-wider rounded-lg hover:shadow-[0_0_40px_rgba(0,255,255,0.5)] transition-all transform hover:scale-105">
-              GET ZENFLOW FREE →
+            <button className="px-10 py-5 bg-primary text-white font-outfit font-semibold rounded-full hover:shadow-xl hover:shadow-primary/30 transition-all text-lg">
+              Begin Your Journey
             </button>
           </motion.div>
         </div>
