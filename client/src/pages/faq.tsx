@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 const faqs = [
   { q: "Is ZENFLOW really free?", a: "Yes! ZENFLOW offers hundreds of free guided meditations. We also have a premium tier for advanced features." },
@@ -22,8 +25,9 @@ export default function FAQ() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="container max-w-3xl mx-auto text-center">
+      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
+        <FloatingBubbles count={4} />
+        <div className="container max-w-3xl mx-auto text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,34 +44,32 @@ export default function FAQ() {
       <section className="py-16 px-6">
         <div className="container max-w-3xl mx-auto space-y-3">
           {faqs.map((faq, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="card-premium overflow-hidden"
-            >
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full p-6 flex items-center justify-between hover:bg-primary/5 transition-colors"
+            <ScrollReveal key={i} delay={i * 0.05} direction="up">
+              <motion.div
+                className="card-premium overflow-hidden pulse-glow hover:scale-105 transition-transform"
+                whileHover={{ y: -2 }}
               >
-                <h3 className="text-lg font-semibold text-left">{faq.q}</h3>
-                <ChevronDown 
-                  className={`w-5 h-5 text-primary transition-transform ${open === i ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {open === i && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="px-6 pb-6 border-t border-foreground/10 text-foreground/70"
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  className="w-full p-6 flex items-center justify-between hover:bg-primary/5 transition-colors"
                 >
-                  {faq.a}
-                </motion.div>
-              )}
-            </motion.div>
+                  <h3 className="text-lg font-semibold text-left">{faq.q}</h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-primary transition-transform ${open === i ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {open === i && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="px-6 pb-6 border-t border-foreground/10 text-foreground/70"
+                  >
+                    {faq.a}
+                  </motion.div>
+                )}
+              </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -80,6 +82,8 @@ export default function FAQ() {
           <button className="btn-primary">Contact Support</button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

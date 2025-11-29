@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Calendar, User, ArrowRight } from "lucide-react";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 const articles = [
   {
@@ -67,7 +70,8 @@ export default function Blog() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent">
+      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
+        <FloatingBubbles count={4} />
         <div className="container max-w-6xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

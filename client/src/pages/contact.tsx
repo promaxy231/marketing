@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Mail, MessageSquare, Heart } from "lucide-react";
 import { useState } from "react";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -11,8 +14,9 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="container max-w-3xl mx-auto text-center">
+      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
+        <FloatingBubbles count={4} />
+        <div className="container max-w-3xl mx-auto text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,64 +33,59 @@ export default function Contact() {
       <section className="py-20 px-6">
         <div className="container max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <ScrollReveal direction="left">
             <div className="space-y-4">
               <input
                 type="text"
                 placeholder="Your name"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary"
+                className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
               />
               <input
                 type="email"
                 placeholder="your@email.com"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary"
+                className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
               />
               <textarea
                 placeholder="Your message"
                 rows={6}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-6 py-3 rounded-2xl border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary resize-none"
+                className="w-full px-6 py-3 rounded-2xl border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none transition-all"
               />
-              <button className="w-full btn-primary py-4">
+              <motion.button 
+                className="w-full btn-primary py-4"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
                 Send Message
-              </button>
+              </motion.button>
             </div>
-          </motion.div>
+          </ScrollReveal>
 
           {/* Info */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div className="card-premium p-6">
-              <Mail className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold mb-2">Email</h3>
-              <p className="text-foreground/70">support@zenflow.app</p>
+          <ScrollReveal direction="right">
+            <div className="space-y-8">
+              {[
+                { icon: Mail, title: "Email", desc: "support@zenflow.app" },
+                { icon: MessageSquare, title: "Live Chat", desc: "Available 9am-9pm EST daily" },
+                { icon: Heart, title: "Community", desc: "Join 5M+ users on the platform" }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  className="card-premium p-6 pulse-glow hover:scale-105 transition-transform"
+                  whileHover={{ y: -5 }}
+                >
+                  <item.icon className="w-8 h-8 text-gradient mb-4" />
+                  <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                  <p className="text-foreground/70">{item.desc}</p>
+                </motion.div>
+              ))}
             </div>
-
-            <div className="card-premium p-6">
-              <MessageSquare className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold mb-2">Live Chat</h3>
-              <p className="text-foreground/70">Available 9am-9pm EST daily</p>
-            </div>
-
-            <div className="card-premium p-6">
-              <Heart className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold mb-2">Community</h3>
-              <p className="text-foreground/70">Join 5M+ users on the platform</p>
-            </div>
-          </motion.div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -100,6 +99,8 @@ export default function Contact() {
           </a>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import { Check } from "lucide-react";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 const plans = [
   {
@@ -58,8 +61,9 @@ export default function Pricing() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent">
-        <div className="container max-w-4xl mx-auto text-center">
+      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
+        <FloatingBubbles count={5} />
+        <div className="container max-w-4xl mx-auto text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,44 +81,42 @@ export default function Pricing() {
         <div className="container max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {plans.map((plan, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className={`card-premium p-8 flex flex-col ${plan.highlight ? 'ring-2 ring-primary md:scale-105' : ''}`}
-              >
-                {plan.highlight && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-bold rounded-full">
-                    MOST POPULAR
-                  </div>
-                )}
-                
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-primary">{plan.price}</span>
-                  {plan.period && <span className="text-foreground/60">{plan.period}</span>}
-                </div>
-                <p className="text-foreground/70 mb-6">{plan.desc}</p>
-                
-                <button className={`w-full py-3 rounded-full font-semibold mb-8 transition-all ${
-                  plan.highlight
-                    ? 'btn-primary'
-                    : 'border-2 border-primary/30 text-foreground hover:border-primary/60 hover:bg-primary/5'
-                }`}>
-                  {plan.cta}
-                </button>
-
-                <div className="space-y-4 flex-1">
-                  {plan.features.map((feature, j) => (
-                    <div key={j} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground/80">{feature}</span>
+              <ScrollReveal key={i} delay={i * 0.1} direction="up">
+                <motion.div
+                  className={`card-premium p-8 flex flex-col relative ${plan.highlight ? 'ring-2 ring-primary md:scale-105 pulse-glow' : ''}`}
+                  whileHover={{ y: -10 }}
+                >
+                  {plan.highlight && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-bold rounded-full">
+                      MOST POPULAR
                     </div>
-                  ))}
-                </div>
-              </motion.div>
+                  )}
+                  
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold text-gradient">{plan.price}</span>
+                    {plan.period && <span className="text-foreground/60">{plan.period}</span>}
+                  </div>
+                  <p className="text-foreground/70 mb-6">{plan.desc}</p>
+                  
+                  <button className={`w-full py-3 rounded-full font-semibold mb-8 transition-all ${
+                    plan.highlight
+                      ? 'btn-primary'
+                      : 'border-2 border-primary/30 text-foreground hover:border-primary/60 hover:bg-primary/5'
+                  }`}>
+                    {plan.cta}
+                  </button>
+
+                  <div className="space-y-4 flex-1">
+                    {plan.features.map((feature, j) => (
+                      <div key={j} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-foreground/80">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -132,14 +134,18 @@ export default function Pricing() {
               { q: "Do you offer student discounts?", a: "Yes! 50% off Premium with valid student ID." },
               { q: "Is there a refund policy?", a: "Full refund within 30 days if not satisfied." }
             ].map((item, i) => (
-              <div key={i} className="card-premium p-6">
-                <h3 className="font-semibold mb-2">{item.q}</h3>
-                <p className="text-foreground/70 text-sm">{item.a}</p>
-              </div>
+              <ScrollReveal key={i} delay={i * 0.05}>
+                <div className="card-premium p-6 hover:scale-105 transition-transform">
+                  <h3 className="font-semibold mb-2">{item.q}</h3>
+                  <p className="text-foreground/70 text-sm">{item.a}</p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
