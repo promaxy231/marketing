@@ -1,6 +1,7 @@
 import { Link } from "wouter";
-import { ShoppingBag, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
+import favicon from "@assets/generated_images/zenflow_meditation_favicon_icon.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +11,12 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <div className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-              <span className="text-xs font-bold text-primary">Z</span>
-            </div>
+          <div className="flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity">
+            <img 
+              src={favicon} 
+              alt="ZENFLOW" 
+              className="w-10 h-10 rounded-full shadow-md group-hover:shadow-lg transition-shadow"
+            />
             <span className="font-display font-semibold text-lg tracking-tight text-foreground">
               ZEN<span className="text-primary">FLOW</span>
             </span>
