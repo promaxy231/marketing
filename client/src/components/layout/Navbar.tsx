@@ -22,13 +22,17 @@ export function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 font-outfit text-sm tracking-wide text-foreground/70">
-          {["Meditate", "Community", "Blog"].map((item) => (
+          {[
+            { label: "Meditate", href: "/meditate" },
+            { label: "Community", href: "/community" },
+            { label: "Blog", href: "/blog" }
+          ].map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="hover:text-primary transition-colors relative group"
             >
-              {item}
+              {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
           ))}
@@ -54,13 +58,17 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-white/50 backdrop-blur-md border-b border-foreground/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
-          {["Meditate", "Community", "Blog"].map((item) => (
+          {[
+            { label: "Meditate", href: "/meditate" },
+            { label: "Community", href: "/community" },
+            { label: "Blog", href: "/blog" }
+          ].map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="font-outfit text-lg text-foreground hover:text-primary"
             >
-              {item}
+              {item.label}
             </a>
           ))}
           <button className="mt-4 px-6 py-2 bg-primary text-white font-outfit font-semibold rounded-full">
