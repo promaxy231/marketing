@@ -24,8 +24,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-12 font-outfit text-sm tracking-wide">
           {[
             { label: "Products", href: "/products" },
-            { label: "About", href: "/about" },
-            { label: "Pricing", href: "/pricing" }
+            { label: "About", href: "/about" }
           ].map((item) => (
             <a
               key={item.label}
@@ -60,8 +59,7 @@ export function Navbar() {
         <div className="md:hidden absolute top-20 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-amber-600/20 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
           {[
             { label: "Products", href: "/products" },
-            { label: "About", href: "/about" },
-            { label: "Pricing", href: "/pricing" }
+            { label: "About", href: "/about" }
           ].map((item) => (
             <a
               key={item.label}
