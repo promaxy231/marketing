@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import chronograph from "@assets/generated_images/premium_luxury_chronograph_watch.png";
 import audio from "@assets/generated_images/luxury_wireless_audio_headphones.png";
 import accessories from "@assets/generated_images/premium_essential_accessories_collection.png";
+import { LuxuryBox } from "@/components/3d/LuxuryBox";
+import { AnimatedGradientBackground } from "@/components/3d/AnimatedGradientBackground";
 
 const galleryImages = [
   { src: chronograph, title: "Precision Timepieces", desc: "72-Hour Kinetic Reserve" },
@@ -36,11 +38,16 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 px-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-slate-950 to-black">
+      <section className="relative pt-40 pb-32 px-6 min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-slate-950 to-black overflow-hidden">
+        {/* 3D Animated Background */}
+        <div className="absolute inset-0 -z-10">
+          <AnimatedGradientBackground />
+        </div>
+
         {/* Background accent */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
+          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s', animationDelay: '2s' }} />
         </div>
 
         <div className="max-w-4xl mx-auto text-center">
@@ -83,28 +90,28 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative mt-20"
+            className="relative mt-20 group"
           >
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-amber-600/20 bg-black shadow-2xl">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-amber-600/20 bg-black shadow-2xl group-hover:shadow-amber-600/30 transition-all duration-500" style={{ boxShadow: '0 0 40px rgba(217, 119, 6, 0.2)' }}>
               {/* Images */}
               {galleryImages.map((image, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: index === currentIndex ? 1 : 0 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: index === currentIndex ? 1 : 0, scale: index === currentIndex ? 1 : 1.1 }}
+                  transition={{ duration: 0.7 }}
                   className="absolute inset-0"
                 >
                   <img
                     src={image.src}
                     alt={image.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </motion.div>
               ))}
 
               {/* Gallery Info Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <motion.div
                   key={currentIndex}
                   initial={{ opacity: 0, y: 10 }}
