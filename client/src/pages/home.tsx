@@ -9,6 +9,7 @@ import accessories from "@assets/generated_images/premium_essential_accessories_
 import { LuxuryBox } from "@/components/3d/LuxuryBox";
 import { AnimatedGradientBackground } from "@/components/3d/AnimatedGradientBackground";
 import { FloatingElements } from "@/components/animations/FloatingElements";
+import { BackgroundParticles } from "@/components/3d/BackgroundParticles";
 
 const galleryImages = [
   { src: chronograph, title: "Precision Timepieces", desc: "72-Hour Kinetic Reserve" },
@@ -45,6 +46,7 @@ export default function Home() {
 
   return (
     <div className="bg-black text-white min-h-screen overflow-hidden">
+      <BackgroundParticles />
       <Navbar />
 
       {/* Hero Section */}
