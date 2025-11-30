@@ -1,9 +1,36 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import chronograph from "@assets/generated_images/premium_luxury_chronograph_watch.png";
+import audio from "@assets/generated_images/luxury_wireless_audio_headphones.png";
+import accessories from "@assets/generated_images/premium_essential_accessories_collection.png";
+
+const galleryImages = [
+  { src: chronograph, title: "Precision Timepieces", desc: "72-Hour Kinetic Reserve" },
+  { src: audio, title: "Integrated Audio", desc: "Silent Mode Integration" },
+  { src: accessories, title: "Essential Accessories", desc: "Lifetime Durability" }
+];
 
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
   return (
     <div className="bg-black text-white min-h-screen overflow-hidden">
       <Navbar />
@@ -51,19 +78,72 @@ export default function Home() {
             </motion.a>
           </motion.div>
 
-          {/* Featured Visual */}
+          {/* Image Gallery */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="relative mt-20"
           >
-            <div className="aspect-video rounded-2xl overflow-hidden border border-amber-600/20 bg-gradient-to-b from-amber-600/10 to-transparent backdrop-blur-sm p-8">
-              <div className="w-full h-full bg-gradient-to-br from-amber-900/30 via-slate-900 to-black rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">✨</div>
-                  <p className="text-slate-400 font-outfit">Premium Collection Showcase</p>
-                </div>
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-amber-600/20 bg-black shadow-2xl">
+              {/* Images */}
+              {galleryImages.map((image, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: index === currentIndex ? 1 : 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
+
+              {/* Gallery Info Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="z-10"
+                >
+                  <p className="text-amber-400/80 text-sm uppercase tracking-widest font-outfit mb-2">{galleryImages[currentIndex].title}</p>
+                  <p className="text-white text-lg font-display">{galleryImages[currentIndex].desc}</p>
+                </motion.div>
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevImage}
+                className="absolute left-6 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-amber-600/20 hover:bg-amber-600/40 text-amber-300 transition-all"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-6 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-amber-600/20 hover:bg-amber-600/40 text-amber-300 transition-all"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Dot Indicators */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                {galleryImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`transition-all rounded-full ${
+                      index === currentIndex
+                        ? "bg-amber-400 w-8 h-2"
+                        : "bg-amber-600/40 hover:bg-amber-600/60 w-2 h-2"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-600/20 to-amber-500/10 rounded-2xl blur-xl -z-10" />
