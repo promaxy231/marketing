@@ -17,8 +17,8 @@ export function Navbar() {
               alt="ZENFLOW" 
               className="w-10 h-10 rounded-full shadow-md group-hover:shadow-lg transition-shadow"
             />
-            <span className="font-display font-semibold text-lg tracking-tight text-foreground">
-              ZEN<span className="text-primary">FLOW</span>
+            <span className="font-display font-semibold text-lg tracking-tight text-amber-300">
+              ESSENTIALS
             </span>
           </div>
         </Link>
@@ -43,11 +43,11 @@ export function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-6">
-          <button className="hidden sm:inline px-6 py-2 text-sm font-outfit font-semibold text-primary hover:text-primary/70 transition-colors">
+          <button className="hidden sm:inline px-6 py-2 text-sm font-outfit font-semibold text-amber-400 hover:text-amber-300 transition-colors">
             Sign In
           </button>
-          <button className="px-6 py-2 bg-primary text-white text-sm font-outfit font-semibold rounded-full hover:shadow-md hover:shadow-primary/20 transition-all">
-            Start Free
+          <button className="px-6 py-2 bg-amber-600 text-black text-sm font-outfit font-semibold rounded-full hover:bg-amber-500 transition-all">
+            Shop Now
           </button>
           <button 
             className="md:hidden text-foreground"
@@ -62,9 +62,9 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-white/50 backdrop-blur-md border-b border-foreground/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
           {[
-            { label: "Meditate", href: "/meditate" },
-            { label: "Community", href: "/community" },
-            { label: "Blog", href: "/blog" }
+            { label: "Products", href: "/products" },
+            { label: "About", href: "/about" },
+            { label: "Pricing", href: "/pricing" }
           ].map((item) => (
             <a
               key={item.label}
@@ -74,8 +74,8 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
-          <button className="mt-4 px-6 py-2 bg-primary text-white font-outfit font-semibold rounded-full">
-            Start Free
+          <button className="mt-4 px-6 py-2 bg-amber-600 text-black font-outfit font-semibold rounded-full hover:bg-amber-500">
+            Shop Now
           </button>
         </div>
       )}
