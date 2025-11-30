@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CheckCircle } from "lucide-react";
 import { Heart, Users, Zap } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { FloatingBubbles } from "@/components/animations/FloatingBubbles";

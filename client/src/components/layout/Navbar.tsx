@@ -26,9 +26,9 @@ export function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8 font-outfit text-sm tracking-wide text-foreground/70">
           {[
-            { label: "Meditate", href: "/meditate" },
-            { label: "Community", href: "/community" },
-            { label: "Blog", href: "/blog" }
+            { label: "Products", href: "/products" },
+            { label: "About", href: "/about" },
+            { label: "Pricing", href: "/pricing" }
           ].map((item) => (
             <a
               key={item.label}
