@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import chronograph from "@assets/generated_images/premium_luxury_chronograph_watch.png";
+import audio from "@assets/generated_images/luxury_wireless_audio_headphones.png";
+import accessories from "@assets/generated_images/premium_essential_accessories_collection.png";
 
 const products = [
   {
@@ -9,21 +12,24 @@ const products = [
     title: "The Chronograph Elite",
     desc: "Engineered from polished titanium and aerospace-grade carbon fiber for a lifetime of precision.",
     features: ["72-Hour Kinetic Reserve", "Scratch-Resistant Sapphire", "Water Resistant to 300m", "Swiss Movement"],
-    price: "$2,450"
+    price: "$2,450",
+    image: chronograph
   },
   {
     category: "Integrated Audio",
     title: "The Acoustics Master",
     desc: "Tuned by master acousticians for an immersive experience, wrapped in hand-stitched leather.",
     features: ["40-Hour Battery Life", "Silent Mode Integration", "Lossless Audio Support", "Premium Materials"],
-    price: "$1,890"
+    price: "$1,890",
+    image: audio
   },
   {
     category: "Essential Accessories",
     title: "The Refined Collection",
     desc: "Carefully curated accessories that seamlessly integrate into a powerful, sophisticated workflow.",
     features: ["Lifetime Durability", "Minimal Design", "Ethically Sourced", "Premium Finishes"],
-    price: "Starting at $485"
+    price: "Starting at $485",
+    image: accessories
   }
 ];
 
@@ -66,13 +72,14 @@ export default function Products() {
               >
                 {/* Product Image */}
                 <div className={`relative ${i % 2 === 1 ? "md:order-2" : ""}`}>
-                  <div className="aspect-square rounded-2xl border border-amber-600/20 bg-gradient-to-br from-amber-600/10 to-slate-900 flex items-center justify-center overflow-hidden">
-                    <div className="text-center">
-                      <div className="text-7xl mb-4">✨</div>
-                      <p className="text-slate-400 font-outfit">{product.category}</p>
-                    </div>
+                  <div className="aspect-square rounded-2xl border border-amber-600/30 bg-gradient-to-br from-amber-600/5 to-slate-900/50 flex items-center justify-center overflow-hidden shadow-2xl">
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-600/10 to-amber-500/5 rounded-2xl blur-lg -z-10" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-amber-600/20 to-amber-500/10 rounded-2xl blur-lg -z-10" />
                 </div>
 
                 {/* Product Details */}
