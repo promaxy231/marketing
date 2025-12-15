@@ -89,8 +89,8 @@ export default function Blog() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
                 className={`px-4 py-2 rounded-full transition-all ${
-                  i === 0 
-                    : "bg-primary text-foreground" 
+                  i === 0
+                    ? "bg-primary text-foreground"
                     : "bg-primary/10 text-foreground hover:bg-primary/20"
                 }`}
               >
