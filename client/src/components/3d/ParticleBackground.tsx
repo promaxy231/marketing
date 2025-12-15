@@ -36,10 +36,10 @@ export function ParticleBackground() {
       positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
       
-      // Purple to blue colors
-      colors[i * 3] = 0.6 + Math.random() * 0.4;     // Red: 0.6-1.0
-      colors[i * 3 + 1] = 0.3 + Math.random() * 0.4;  // Green: 0.3-0.7
-      colors[i * 3 + 2] = 0.8 + Math.random() * 0.2;  // Blue: 0.8-1.0
+      // Gold-toned accents
+      colors[i * 3] = 0.9 + Math.random() * 0.1;     // Red: 0.9-1.0
+      colors[i * 3 + 1] = 0.6 + Math.random() * 0.25; // Green: 0.6-0.85
+      colors[i * 3 + 2] = 0.2 + Math.random() * 0.2;  // Blue: 0.2-0.4
     }
 
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));

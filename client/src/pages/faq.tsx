@@ -44,7 +44,7 @@ export default function FAQ() {
       <section className="py-16 px-6">
         <div className="container max-w-3xl mx-auto">
           <div className="mb-6">
-            <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Rechercher une question..." className="w-full px-4 py-3 rounded-md border bg-white/60" />
+            <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Rechercher une question..." className="w-full px-4 py-3 rounded-md border bg-foreground/8" />
           </div>
           <div className="space-y-3">
             {filtered.map((faq, i) => (

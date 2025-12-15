@@ -90,7 +90,7 @@ export default function Blog() {
                 transition={{ delay: i * 0.05 }}
                 className={`px-4 py-2 rounded-full transition-all ${
                   i === 0 
-                    ? "bg-primary text-white" 
+                    : "bg-primary text-foreground" 
                     : "bg-primary/10 text-foreground hover:bg-primary/20"
                 }`}
               >
@@ -185,7 +185,7 @@ export default function Blog() {
               <input 
                 type="email" 
                 placeholder="your@email.com" 
-                className="flex-1 px-4 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary"
+                className="flex-1 px-4 py-3 rounded-full border border-foreground/20 bg-foreground/8 placeholder-foreground/50 focus:outline-none focus:border-primary"
               />
               <button className="btn-primary whitespace-nowrap">Subscribe</button>
             </div>

@@ -36,9 +36,9 @@ export function MeditationSphere() {
     // Create main sphere with enhanced material
     const geometry = new THREE.IcosahedronGeometry(1, 32);
     const material = new THREE.MeshPhongMaterial({
-      color: 0x9d7cff,
-      emissive: 0x7c3aed,
-      shininess: 100,
+      color: 0xe6aa28,
+      emissive: 0xb06b10,
+      shininess: 120,
       wireframe: false,
       flatShading: false
     });
@@ -49,8 +49,8 @@ export function MeditationSphere() {
     // Add torus ring around sphere
     const torusGeometry = new THREE.TorusGeometry(1.3, 0.08, 32, 100);
     const torusMaterial = new THREE.MeshPhongMaterial({
-      color: 0xc084fc,
-      emissive: 0xc084fc,
+      color: 0xd4a42a,
+      emissive: 0xd4a42a,
       shininess: 80,
       transparent: true,
       opacity: 0.8
@@ -87,9 +87,9 @@ export function MeditationSphere() {
       orbitsRef.current.push(group);
     };
 
-    createOrbit(1.5, 0x60a5fa, 0.0003);
-    createOrbit(1.8, 0xc084fc, -0.0002);
-    createOrbit(2.1, 0x818cf8, 0.00015);
+    createOrbit(1.5, 0xe6aa28, 0.0003);
+    createOrbit(1.8, 0xd4a42a, -0.0002);
+    createOrbit(2.1, 0xb07b1a, 0.00015);
 
     // Add glowing particles
     const particlesGeometry = new THREE.BufferGeometry();
@@ -106,7 +106,7 @@ export function MeditationSphere() {
       positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
       positions[i + 2] = radius * Math.cos(phi);
 
-      // Color gradient from purple to blue
+      // Color gradient adapted to gold tones
       colors[i] = 0.6 + Math.random() * 0.4;
       colors[i + 1] = 0.3 + Math.random() * 0.3;
       colors[i + 2] = 1.0;
@@ -134,11 +134,11 @@ export function MeditationSphere() {
     pointLight1.position.set(5, 5, 5);
     scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0xc084fc, 1);
+    const pointLight2 = new THREE.PointLight(0xd4a42a, 1);
     pointLight2.position.set(-5, -5, 5);
     scene.add(pointLight2);
 
-    const pointLight3 = new THREE.PointLight(0x60a5fa, 0.8);
+    const pointLight3 = new THREE.PointLight(0xe6aa28, 0.8);
     pointLight3.position.set(0, 5, -5);
     scene.add(pointLight3);
 

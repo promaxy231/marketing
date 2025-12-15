@@ -86,8 +86,8 @@ export default function Community() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-4xl font-display font-semibold text-white mb-3">Feel the Connection</h3>
-                <p className="text-white/80 text-lg">Our community shares product reviews, setup tips, and curated experiences.</p>
+                <h3 className="text-4xl font-display font-semibold text-foreground mb-3">Feel the Connection</h3>
+                <p className="text-foreground/80 text-lg">Our community shares product reviews, setup tips, and curated experiences.</p>
               </motion.div>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function Community() {
                 className="card-premium p-4 flex items-center justify-between group hover:scale-102 transition-transform"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-foreground font-bold">
                     {leader.avatar}
                   </div>
                   <div>
@@ -174,7 +174,7 @@ export default function Community() {
                 className="card-premium p-6"
               >
                 <div className="flex gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-foreground font-bold">
                     {post.avatar}
                   </div>
                   <div className="flex-1">

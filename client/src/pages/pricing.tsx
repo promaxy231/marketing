@@ -87,7 +87,7 @@ export default function Pricing() {
                   whileHover={{ y: -10 }}
                 >
                   {plan.highlight && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-white text-xs font-bold rounded-full">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-foreground text-xs font-bold rounded-full">
                       MOST POPULAR
                     </div>
                   )}

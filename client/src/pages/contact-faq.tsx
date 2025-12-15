@@ -34,9 +34,9 @@ export default function ContactFAQ() {
         <div className="container max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
           <ScrollReveal direction="left">
             <div className="space-y-4">
-              <input type="text" placeholder="Votre nom" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-6 py-3 rounded-full border bg-white/60 placeholder-foreground/60" />
-              <input type="email" placeholder="votre@email.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-6 py-3 rounded-full border bg-white/60 placeholder-foreground/60" />
-              <textarea placeholder="Votre message" rows={6} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-6 py-3 rounded-2xl border bg-white/60 placeholder-foreground/60 resize-none" />
+              <input type="text" placeholder="Votre nom" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-6 py-3 rounded-full border bg-foreground/8 placeholder-foreground/60" />
+              <input type="email" placeholder="votre@email.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-6 py-3 rounded-full border bg-foreground/8 placeholder-foreground/60" />
+              <textarea placeholder="Votre message" rows={6} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-6 py-3 rounded-2xl border bg-foreground/8 placeholder-foreground/60 resize-none" />
               <motion.button className="btn-primary w-full py-3" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>Envoyer</motion.button>
             </div>
           </ScrollReveal>

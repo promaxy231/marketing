@@ -164,7 +164,7 @@ export default function Home() {
                   className="z-10"
                 >
                       <p className="text-primary/70 text-sm uppercase tracking-widest font-outfit mb-2 font-semibold">✦ {galleryImages[currentIndex].title}</p>
-                  <p className="text-white text-xl font-display font-light">{galleryImages[currentIndex].desc}</p>
+                  <p className="text-foreground text-xl font-display font-light">{galleryImages[currentIndex].desc}</p>
                 </motion.div>
               </div>
 

@@ -7,12 +7,12 @@ import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const categories = [
-  { name: "Sleep", icon: "🌙", sessions: 45, color: "from-indigo-400 to-purple-400" },
-  { name: "Anxiety", icon: "🧘", sessions: 38, color: "from-blue-400 to-cyan-400" },
-  { name: "Focus", icon: "🎯", sessions: 32, color: "from-yellow-400 to-orange-400" },
-  { name: "Energy", icon: "⚡", sessions: 28, color: "from-pink-400 to-red-400" },
-  { name: "Gratitude", icon: "🙏", sessions: 25, color: "from-green-400 to-teal-400" },
-  { name: "Confidence", icon: "💪", sessions: 22, color: "from-purple-400 to-pink-400" },
+  { name: "Signature", icon: "🌙", sessions: 45, color: "from-primary to-secondary" },
+  { name: "Performance", icon: "🧰", sessions: 38, color: "from-primary to-secondary" },
+  { name: "Audio", icon: "🎯", sessions: 32, color: "from-primary to-secondary" },
+  { name: "Mobility", icon: "⚡", sessions: 28, color: "from-primary to-secondary" },
+  { name: "Accessories", icon: "🙏", sessions: 25, color: "from-primary to-secondary" },
+  { name: "Confidence", icon: "💪", sessions: 22, color: "from-primary to-secondary" },
 ];
 
 const featured = [
@@ -48,15 +48,15 @@ export default function Meditate() {
         <div className="container max-w-6xl mx-auto">
           <div className="relative h-96 rounded-3xl card-premium overflow-hidden">
             <LuxuryBox />
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/40 to-transparent">
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/40 to-transparent">
               <motion.div 
                 className="text-center z-10"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-4xl font-display font-semibold text-white mb-3">Discover the Object</h3>
-                <p className="text-white/80 text-lg">An immersive preview of our signature craftsmanship in 3D.</p>
+                <h3 className="text-4xl font-display font-semibold text-foreground mb-3">Discover the Object</h3>
+                <p className="text-foreground/80 text-lg">An immersive preview of our signature craftsmanship in 3D.</p>
               </motion.div>
             </div>
           </div>

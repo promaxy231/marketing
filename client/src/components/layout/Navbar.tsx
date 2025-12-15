@@ -12,10 +12,10 @@ export function Navbar() {
         {/* Logo */}
           <Link href="/">
           <div className="flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-display font-bold text-lg">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-foreground font-display font-bold text-lg">
               ✦
             </div>
-            <span className="font-display font-semibold text-lg tracking-tight text-white">
+            <span className="font-display font-semibold text-lg tracking-tight text-foreground">
               ESSENTIALS
             </span>
           </div>
@@ -51,7 +51,7 @@ export function Navbar() {
             <span className="hidden sm:inline">Panier</span>
             <CartCountBadge />
           </a>
-          <button className="px-6 py-2 bg-gradient-to-br from-primary to-secondary text-white text-sm font-outfit font-semibold rounded-full transition-all shadow-lg shadow-primary/20">
+          <button className="px-6 py-2 bg-gradient-to-br from-primary to-secondary text-foreground text-sm font-outfit font-semibold rounded-full transition-all shadow-lg shadow-primary/20">
             Shop Now
           </button>
           <button 
@@ -81,7 +81,7 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
-          <button className="mt-4 px-6 py-2 bg-gradient-to-br from-primary to-secondary text-white font-outfit font-semibold rounded-full transition-all">
+          <button className="mt-4 px-6 py-2 bg-gradient-to-br from-primary to-secondary text-foreground font-outfit font-semibold rounded-full transition-all">
             Shop Now
           </button>
         </div>

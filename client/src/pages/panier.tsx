@@ -38,7 +38,7 @@ export default function Panier() {
                   </div>
                   <div className="flex items-center gap-4 mt-3 md:mt-0">
                     <label className="sr-only">Quantité pour {it.title}</label>
-                    <input aria-label={`Quantité ${it.title}`} type="number" min={1} value={it.qty} onChange={(e) => updateQty(it.id, Math.max(1, Number(e.target.value || 1)))} className="w-20 px-3 py-1 rounded-md border bg-white/60 text-foreground" />
+                    <input aria-label={`Quantité ${it.title}`} type="number" min={1} value={it.qty} onChange={(e) => updateQty(it.id, Math.max(1, Number(e.target.value || 1)))} className="w-20 px-3 py-1 rounded-md border bg-foreground/8 text-foreground" />
                     <div className="font-semibold">€{(it.price * it.qty).toFixed(2)}</div>
                     <button className="text-sm text-red-500 hover:underline" onClick={() => removeItem(it.id)}>Supprimer</button>
                   </div>
