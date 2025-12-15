@@ -33,9 +33,9 @@ export default function FAQ() {
             animate={{ opacity: 1, y: 0 }}
           >
             <h1 className="text-5xl md:text-6xl font-display font-light mb-6">
-              Frequently Asked <span className="text-gradient font-semibold">Questions</span>
+              Foire aux <span className="text-gradient font-semibold">Questions</span>
             </h1>
-            <p className="text-lg text-foreground/70">Find answers to common questions about ZENFLOW</p>
+            <p className="text-lg text-foreground/70">Trouvez des réponses aux questions fréquentes sur ZENFLOW</p>
           </motion.div>
         </div>
       </section>
@@ -77,9 +77,9 @@ export default function FAQ() {
       {/* CTA */}
       <section className="py-16 px-6 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-foreground/10">
         <div className="container max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-display font-light mb-4">Still have questions?</h2>
-          <p className="text-foreground/70 mb-6">Reach out to our support team</p>
-          <button className="btn-primary">Contact Support</button>
+          <h2 className="text-3xl font-display font-light mb-4">Vous avez encore des questions ?</h2>
+          <p className="text-foreground/70 mb-6">Contactez notre équipe de support</p>
+          <a href="/contact-faq" className="btn-primary">Contacter le support</a>
         </div>
       </section>
 

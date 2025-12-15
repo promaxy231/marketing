@@ -22,9 +22,9 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
           >
             <h1 className="text-5xl md:text-6xl font-display font-light mb-6">
-              Get in <span className="text-gradient font-semibold">touch</span>
+              Contactez-<span className="text-gradient font-semibold">nous</span>
             </h1>
-            <p className="text-lg text-foreground/70">We'd love to hear from you. Questions, feedback, or just saying hello?</p>
+            <p className="text-lg text-foreground/70">Des questions, des retours ou un bonjour ? Écrivez-nous.</p>
           </motion.div>
         </div>
       </section>
@@ -37,20 +37,20 @@ export default function Contact() {
             <div className="space-y-4">
               <input
                 type="text"
-                placeholder="Your name"
+                placeholder="Votre nom"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
               />
               <input
                 type="email"
-                placeholder="your@email.com"
+                placeholder="votre@email.com"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
               />
               <textarea
-                placeholder="Your message"
+                placeholder="Votre message"
                 rows={6}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -61,7 +61,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Send Message
+                Envoyer le message
               </motion.button>
             </div>
           </ScrollReveal>
@@ -92,10 +92,10 @@ export default function Contact() {
       {/* FAQ Link */}
       <section className="py-16 px-6 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-foreground/10">
         <div className="container max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-display font-light mb-4">Quick question?</h2>
-          <p className="text-foreground/70 mb-6">Check our FAQ page for instant answers</p>
-          <a href="/faq" className="btn-primary inline-block">
-            Browse FAQ
+          <h2 className="text-2xl font-display font-light mb-4">Une question rapide ?</h2>
+          <p className="text-foreground/70 mb-6">Consultez notre FAQ pour obtenir des réponses immédiates</p>
+          <a href="/contact-faq" className="btn-primary inline-block">
+            Contact & FAQ
           </a>
         </div>
       </section>
