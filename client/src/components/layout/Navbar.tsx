@@ -7,7 +7,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-foreground/10 bg-foreground/95 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-primary/20 bg-background/95 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
           <Link href="/">
@@ -65,7 +65,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-foreground/95 backdrop-blur-md border-b border-foreground/10 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-primary/20 p-6 flex flex-col gap-4 animate-in slide-in-from-top-5">
           {[
             { label: "Produits", href: "/products" },
             { label: "À propos", href: "/about" },

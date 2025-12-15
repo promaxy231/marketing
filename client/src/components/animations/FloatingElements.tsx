@@ -23,7 +23,7 @@ export function FloatingElements() {
           custom={i}
           variants={floatingVariants}
           animate="animate"
-          className="absolute w-2 h-2 bg-amber-400/20 rounded-full blur-sm"
+          className="absolute w-2 h-2 bg-primary/10 rounded-full blur-sm"
           style={{
             left: `${(i * 16.6) + 10}%`,
             top: `${(i * 15) + 20}%`

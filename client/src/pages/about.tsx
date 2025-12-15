@@ -5,11 +5,11 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 px-6 bg-gradient-to-b from-slate-950 to-black border-b border-amber-600/20">
+      <section className="pt-40 pb-20 px-6 bg-gradient-to-b from-slate-950 to-black border-b border-primary/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -18,7 +18,7 @@ export default function About() {
             <h1 className="text-6xl md:text-7xl font-display font-light mb-6">
               The Art of
               <br />
-              <span className="text-amber-300">Essentialism</span>
+              <span className="text-primary">Essentialism</span>
             </h1>
             <p className="text-slate-300 text-lg font-outfit max-w-2xl mx-auto">
               Our design philosophy centers on perfection in simplicity and purposeful innovation.
@@ -28,7 +28,7 @@ export default function About() {
       </section>
 
       {/* Our Story */}
-      <section className="py-24 px-6 border-b border-amber-600/20">
+      <section className="py-24 px-6 border-b border-primary/20">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export default function About() {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-24 px-6 bg-slate-950/50 border-b border-amber-600/20">
+      <section className="py-24 px-6 bg-slate-950/50 border-b border-primary/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-display font-light mb-12">Our Commitment to the Connoisseur</h2>
           
@@ -82,10 +82,10 @@ export default function About() {
                 className="flex gap-6"
               >
                 <div className="flex-shrink-0 mt-1">
-                  <CheckCircle className="w-6 h-6 text-amber-400" />
+                  <CheckCircle className="w-6 h-6 text-primary/70" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-display font-light mb-3 text-amber-300">{item.title}</h3>
+                  <h3 className="text-2xl font-display font-light mb-3 text-primary">{item.title}</h3>
                   <p className="text-slate-300 font-outfit leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
@@ -95,7 +95,7 @@ export default function About() {
       </section>
 
       {/* Trust Quote */}
-      <section className="py-24 px-6 border-b border-amber-600/20">
+      <section className="py-24 px-6 border-b border-primary/20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.blockquote
             initial={{ opacity: 0 }}
@@ -103,7 +103,7 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <p className="text-3xl font-display font-light text-amber-300 leading-relaxed">
+            <p className="text-3xl font-display font-light text-primary leading-relaxed">
               "A revolution in essential luxury."
             </p>
             <p className="text-slate-400 font-outfit">— Tech & Design Magazine</p>
@@ -119,7 +119,7 @@ export default function About() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-amber-600 hover:bg-amber-500 text-black font-display font-semibold rounded-full transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3 btn-primary font-display font-semibold rounded-full"
           >
             Request Early Access
             <ArrowRight className="w-5 h-5" />
