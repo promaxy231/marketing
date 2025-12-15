@@ -17,13 +17,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-black via-slate-950 to-black overflow-hidden">
+      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
         <BackgroundParticles />
-        <FloatingBubbles count={3} />
+        <FloatingBubbles count={4} />
         <div className="container max-w-3xl mx-auto text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function Contact() {
             <h1 className="text-5xl md:text-6xl font-display font-light mb-6">
               Contactez-<span className="text-gradient font-semibold">nous</span>
             </h1>
-            <p className="text-lg text-slate-300">Des questions, des retours ou un bonjour ? Écrivez-nous.</p>
+            <p className="text-lg text-foreground/70">Des questions, des retours ou un bonjour ? Écrivez-nous.</p>
           </motion.div>
         </div>
       </section>
@@ -45,33 +45,33 @@ export default function Contact() {
             <div className="card-premium p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="text-sm text-slate-300 mb-2 block">Votre nom</label>
+                  <label className="text-sm text-foreground/70 mb-2 block">Votre nom</label>
                   <input
                     type="text"
                     placeholder="Votre nom"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full px-6 py-3 rounded-full border border-amber-600/20 bg-transparent placeholder-slate-500 text-white focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all"
+                    className="w-full px-6 py-3 rounded-full border border-foreground/10 bg-white/60 placeholder-foreground/60 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-slate-300 mb-2 block">Email</label>
+                  <label className="text-sm text-foreground/70 mb-2 block">Email</label>
                   <input
                     type="email"
                     placeholder="votre@email.com"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full px-6 py-3 rounded-full border border-amber-600/20 bg-transparent placeholder-slate-500 text-white focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all"
+                    className="w-full px-6 py-3 rounded-full border border-foreground/10 bg-white/60 placeholder-foreground/60 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-slate-300 mb-2 block">Message</label>
+                  <label className="text-sm text-foreground/70 mb-2 block">Message</label>
                   <textarea
                     placeholder="Votre message"
                     rows={6}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full px-6 py-3 rounded-2xl border border-amber-600/20 bg-transparent placeholder-slate-500 text-white focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 resize-none transition-all"
+                    className="w-full px-6 py-3 rounded-2xl border border-foreground/10 bg-white/60 placeholder-foreground/60 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none transition-all"
                   />
                 </div>
                 <motion.button 

@@ -12,9 +12,9 @@ export default function Panier() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 pb-8 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
+      <section className="relative pt-32 pb-16 px-6 bg-gradient-to-b from-primary/5 to-transparent overflow-hidden">
         <BackgroundParticles />
-        <FloatingBubbles count={2} />
+        <FloatingBubbles count={3} />
         <div className="container max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-display mb-2">Votre <span className="text-gradient">Panier</span></h1>
           <p className="text-foreground/70">Vérifiez vos articles et passez votre commande en toute simplicité.</p>
@@ -38,7 +38,7 @@ export default function Panier() {
                   </div>
                   <div className="flex items-center gap-4 mt-3 md:mt-0">
                     <label className="sr-only">Quantité pour {it.title}</label>
-                    <input aria-label={`Quantité ${it.title}`} type="number" min={1} value={it.qty} onChange={(e) => updateQty(it.id, Math.max(1, Number(e.target.value || 1)))} className="w-20 px-3 py-1 rounded-md border bg-transparent" />
+                    <input aria-label={`Quantité ${it.title}`} type="number" min={1} value={it.qty} onChange={(e) => updateQty(it.id, Math.max(1, Number(e.target.value || 1)))} className="w-20 px-3 py-1 rounded-md border bg-white/60 text-foreground" />
                     <div className="font-semibold">€{(it.price * it.qty).toFixed(2)}</div>
                     <button className="text-sm text-red-500 hover:underline" onClick={() => removeItem(it.id)}>Supprimer</button>
                   </div>
