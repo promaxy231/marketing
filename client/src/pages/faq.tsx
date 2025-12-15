@@ -7,18 +7,18 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 const faqs = [
-  { q: "Is ZENFLOW really free?", a: "Yes! ZENFLOW offers hundreds of free guided meditations. We also have a premium tier for advanced features." },
-  { q: "How long should I meditate?", a: "Start with just 5 minutes daily. Even brief sessions can reduce stress and improve focus. Gradually increase as you get comfortable." },
-  { q: "Do I need experience?", a: "No experience needed. Our sessions are designed for absolute beginners. Expert instructors guide you every step." },
-  { q: "Can I meditate offline?", a: "Download sessions to your device with our premium plan and meditate anywhere, anytime." },
-  { q: "Which is best for sleep?", a: "Our 'Deep Sleep Journey' (20min) and 'Calm Your Mind' (10min) sessions are specifically designed for restful sleep." },
-  { q: "How often should I meditate?", a: "Daily practice yields best results. Even 5 minutes daily is more effective than occasional longer sessions." },
-  { q: "Is there a subscription?", a: "No commitment needed! Try free forever, and upgrade anytime if you want premium content." },
-  { q: "Can kids use ZENFLOW?", a: "Yes! We have special sessions for teens and kids age 8+. Parents can set up family accounts." },
+  { q: "ZENFLOW est-il vraiment gratuit ?", a: "Oui — des sessions gratuites sont disponibles. Nous proposons aussi une offre premium." },
+  { q: "Combien de temps méditer ?", a: "Commencez par 5 minutes par jour et augmentez progressivement." },
+  { q: "Dois-je avoir de l'expérience ?", a: "Aucune expérience requise — nos sessions conviennent à tous les niveaux." },
+  { q: "Puis-je utiliser l'application hors ligne ?", a: "Avec l'abonnement premium, téléchargez des sessions pour une écoute hors ligne." },
+  { q: "Quelles sessions pour le sommeil ?", a: "Les sessions 'Deep Sleep Journey' (20min) et 'Calm Your Mind' (10min) aident au sommeil." },
 ];
+
 
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
+  const [query, setQuery] = useState("");
+  const filtered = faqs.filter((f) => f.q.toLowerCase().includes(query.toLowerCase()));
 
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -42,35 +42,40 @@ export default function FAQ() {
 
       {/* FAQs */}
       <section className="py-16 px-6">
-        <div className="container max-w-3xl mx-auto space-y-3">
-          {faqs.map((faq, i) => (
-            <ScrollReveal key={i} delay={i * 0.05} direction="up">
-              <motion.div
-                className="card-premium overflow-hidden pulse-glow hover:scale-105 transition-transform"
-                whileHover={{ y: -2 }}
-              >
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  className="w-full p-6 flex items-center justify-between hover:bg-primary/5 transition-colors"
+        <div className="container max-w-3xl mx-auto">
+          <div className="mb-6">
+            <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Rechercher une question..." className="w-full px-4 py-3 rounded-md border bg-white/60" />
+          </div>
+          <div className="space-y-3">
+            {filtered.map((faq, i) => (
+              <ScrollReveal key={i} delay={i * 0.05} direction="up">
+                <motion.div
+                  className="card-premium overflow-hidden pulse-glow hover:scale-105 transition-transform"
+                  whileHover={{ y: -2 }}
                 >
-                  <h3 className="text-lg font-semibold text-left">{faq.q}</h3>
-                  <ChevronDown 
-                    className={`w-5 h-5 text-primary transition-transform ${open === i ? 'rotate-180' : ''}`}
-                  />
-                </button>
-                {open === i && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="px-6 pb-6 border-t border-foreground/10 text-foreground/70"
+                  <button
+                    onClick={() => setOpen(open === i ? null : i)}
+                    className="w-full p-6 flex items-center justify-between hover:bg-primary/5 transition-colors"
                   >
-                    {faq.a}
-                  </motion.div>
-                )}
-              </motion.div>
-            </ScrollReveal>
-          ))}
+                    <h3 className="text-lg font-semibold text-left">{faq.q}</h3>
+                    <ChevronDown 
+                      className={`w-5 h-5 text-primary transition-transform ${open === i ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {open === i && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="px-6 pb-6 border-t border-foreground/10 text-foreground/70"
+                    >
+                      {faq.a}
+                    </motion.div>
+                  )}
+                </motion.div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 

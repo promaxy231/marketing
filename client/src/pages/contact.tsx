@@ -8,6 +8,12 @@ import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Mock submit
+    alert('Merci — votre message a été envoyé.');
+    setForm({ name: '', email: '', message: '' });
+  };
 
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -34,36 +40,37 @@ export default function Contact() {
         <div className="container max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
           {/* Form */}
           <ScrollReveal direction="left">
-            <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
                 placeholder="Votre nom"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                className="w-full px-6 py-3 rounded-full border border-foreground/10 bg-white/60 placeholder-foreground/60 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all"
               />
               <input
                 type="email"
                 placeholder="votre@email.com"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full px-6 py-3 rounded-full border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                className="w-full px-6 py-3 rounded-full border border-foreground/10 bg-white/60 placeholder-foreground/60 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all"
               />
               <textarea
                 placeholder="Votre message"
                 rows={6}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-6 py-3 rounded-2xl border border-foreground/20 bg-white/50 placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none transition-all"
+                className="w-full px-6 py-3 rounded-2xl border border-foreground/10 bg-white/60 placeholder-foreground/60 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 resize-none transition-all"
               />
               <motion.button 
+                type="submit"
                 className="w-full btn-primary py-4"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Envoyer le message
+                Envoyer
               </motion.button>
-            </div>
+            </form>
           </ScrollReveal>
 
           {/* Info */}

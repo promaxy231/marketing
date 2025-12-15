@@ -15,6 +15,7 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import Panier from "@/pages/panier";
 import ContactFAQ from "@/pages/contact-faq";
+import { CartProvider } from "@/lib/cart";
 
 function Router() {
   return (
@@ -40,7 +41,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        {/* CartProvider wraps the app to provide cart state */}
+        <CartProvider>
+          <Router />
+        </CartProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );
