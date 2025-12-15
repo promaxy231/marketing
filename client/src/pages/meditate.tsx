@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Play, Clock, Zap, Users } from "lucide-react";
-import { MeditationSphere } from "@/components/3d/MeditationSphere";
+import { LuxuryBox } from "@/components/3d/LuxuryBox";
 import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
@@ -36,18 +36,18 @@ export default function Meditate() {
             className="text-center max-w-2xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-display font-light mb-6">
-              Start <span className="text-gradient font-semibold">meditating</span> today
+              Experience <span className="text-gradient font-semibold">Our Showcase</span>
             </h1>
-            <p className="text-lg text-foreground/70">Thousands of guided sessions to calm your mind, reduce stress, and find inner peace</p>
+            <p className="text-lg text-foreground/70">Discover curated, high‑end tech pieces crafted for performance and timeless design.</p>
           </motion.div>
         </div>
       </section>
 
-      {/* 3D Meditation Sphere */}
+      {/* 3D Product Showcase */}
       <section className="relative py-20 px-6 overflow-hidden">
         <div className="container max-w-6xl mx-auto">
           <div className="relative h-96 rounded-3xl card-premium overflow-hidden">
-            <MeditationSphere />
+            <LuxuryBox />
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/40 to-transparent">
               <motion.div 
                 className="text-center z-10"
@@ -55,8 +55,8 @@ export default function Meditate() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-4xl font-display font-semibold text-white mb-3">Enter the Flow</h3>
-                <p className="text-white/80 text-lg">Feel the calm, immersive meditation experience</p>
+                <h3 className="text-4xl font-display font-semibold text-white mb-3">Discover the Object</h3>
+                <p className="text-white/80 text-lg">An immersive preview of our signature craftsmanship in 3D.</p>
               </motion.div>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function Meditate() {
       {/* Featured Sessions */}
       <section className="py-16 px-6 relative">
         <div className="container max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold mb-8 text-gradient">Featured Sessions</h2>
+          <h2 className="text-3xl font-display font-semibold mb-8 text-gradient">Featured Pieces</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {featured.map((session, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="up">
@@ -98,7 +98,7 @@ export default function Meditate() {
       <section className="py-16 px-6 relative overflow-hidden">
         <FloatingBubbles count={3} />
         <div className="container max-w-6xl mx-auto relative z-10">
-          <h2 className="text-3xl font-display font-semibold mb-8 text-gradient">Browse by Category</h2>
+          <h2 className="text-3xl font-display font-semibold mb-8 text-gradient">Browse Collections</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((cat, i) => (
               <ScrollReveal key={i} delay={i * 0.05} direction="up">
@@ -110,7 +110,7 @@ export default function Meditate() {
                   {cat.icon}
                 </div>
                 <h3 className="text-2xl font-semibold mb-2">{cat.name}</h3>
-                <p className="text-sm text-foreground/70">{cat.sessions} Sessions</p>
+                <p className="text-sm text-foreground/70">{cat.sessions} Items</p>
                 </motion.div>
               </ScrollReveal>
             ))}
@@ -128,11 +128,11 @@ export default function Meditate() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-display font-light mb-6">
-              Ready to begin? <span className="text-gradient font-semibold">Start free today</span>
+              Ready to explore? <span className="text-gradient font-semibold">Shop the Collection</span>
             </h2>
-            <button className="btn-primary">
-              Explore All Sessions
-            </button>
+            <a href="/products" className="btn-primary">
+              Explore Collection
+            </a>
           </motion.div>
         </div>
       </section>

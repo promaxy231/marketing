@@ -7,26 +7,26 @@ import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 const articles = [
   {
-    title: "The Science Behind Meditation",
-    excerpt: "Discover how meditation rewires your brain and reduces stress at a neurological level.",
+    title: "Inside The Chronograph Elite",
+    excerpt: "An in-depth look at the engineering and materials that define our flagship timepiece.",
     date: "Nov 28, 2024",
-    author: "Dr. Sarah Chen",
-    category: "Science",
+    author: "Design Team",
+    category: "Product",
     readTime: "8 min",
-    emoji: "🧠"
+    emoji: "⌚"
   },
   {
-    title: "5 Morning Rituals for Better Days",
-    excerpt: "Start your day right with these scientifically-proven morning meditation practices.",
+    title: "Optimizing Your Audio Setup",
+    excerpt: "How to get studio-quality sound from The Acoustics Master in any room.",
     date: "Nov 25, 2024",
-    author: "James Wilson",
-    category: "Wellness",
+    author: "Audio Lab",
+    category: "Guides",
     readTime: "6 min",
-    emoji: "🌅"
+    emoji: "🎧"
   },
   {
-    title: "Meditation for Busy Professionals",
-    excerpt: "How to fit meaningful meditation into your hectic schedule without guilt.",
+    title: "Choosing the Right Essentials for Travel",
+    excerpt: "A buyer's guide to selecting premium accessories that travel well.",
     date: "Nov 22, 2024",
     author: "Maria Garcia",
     category: "Lifestyle",
@@ -34,35 +34,26 @@ const articles = [
     emoji: "💼"
   },
   {
-    title: "Understanding Sleep Meditation",
-    excerpt: "A complete guide to using guided sleep sessions for deeper, more restful nights.",
+    title: "Materials & Finishes: What Matters",
+    excerpt: "Why material selection matters for longevity and luxury — a materials deep dive.",
     date: "Nov 19, 2024",
-    author: "Dr. Michael Lee",
-    category: "Sleep",
+    author: "Workshop",
+    category: "Craftsmanship",
     readTime: "10 min",
-    emoji: "😴"
+    emoji: "🔧"
   },
   {
-    title: "Anxiety Management Through Breathwork",
-    excerpt: "Learn powerful breathing techniques that activate your parasympathetic nervous system.",
-    date: "Nov 16, 2024",
-    author: "Emma Thompson",
-    category: "Mental Health",
-    readTime: "9 min",
-    emoji: "🫁"
-  },
-  {
-    title: "Community Stories: Life-Changing Journeys",
-    excerpt: "Real stories from our members about how ZENFLOW transformed their lives.",
+    title: "Customer Stories: Signature Experiences",
+    excerpt: "Real testimonials from customers who chose ESSENTIALS for performance and craft.",
     date: "Nov 13, 2024",
-    author: "Alex Rodriguez",
+    author: "Community Team",
     category: "Community",
     readTime: "12 min",
-    emoji: "💜"
+    emoji: "🛍️"
   }
 ];
 
-const categories = ["All", "Science", "Wellness", "Lifestyle", "Sleep", "Mental Health", "Community"];
+  const categories = ["All", "Product", "Guides", "Lifestyle", "Craftsmanship", "Community"];
 
 export default function Blog() {
   return (
@@ -79,9 +70,9 @@ export default function Blog() {
             className="text-center max-w-2xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-display font-light mb-6">
-              Wellness <span className="text-gradient font-semibold">insights</span>
+              Insights <span className="text-gradient font-semibold">& Guides</span>
             </h1>
-            <p className="text-lg text-foreground/70">Explore articles about meditation, mental health, and living your best life.</p>
+            <p className="text-lg text-foreground/70">Explore product deep dives, setup guides, and stories from ESSENTIALS customers.</p>
           </motion.div>
         </div>
       </section>
@@ -187,9 +178,9 @@ export default function Blog() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-display font-light mb-4">
-              Get wellness <span className="text-gradient font-semibold">delivered</span>
+              Get updates <span className="text-gradient font-semibold">delivered</span>
             </h2>
-            <p className="text-foreground/70 mb-6">Subscribe to get the latest wellness tips delivered to your inbox.</p>
+            <p className="text-foreground/70 mb-6">Subscribe to receive product launches, early access and exclusive offers.</p>
             <div className="flex gap-3 max-w-md mx-auto">
               <input 
                 type="email" 

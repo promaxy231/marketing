@@ -54,7 +54,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // hydrate from localStorage
   useEffect(() => {
     try {
-      const raw = localStorage.getItem("zenflow_cart");
+      const raw = localStorage.getItem("essentials_cart");
       if (raw) dispatch({ type: "hydrate", payload: JSON.parse(raw) });
     } catch (e) {
       // ignore
@@ -64,7 +64,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   // persist
   useEffect(() => {
     try {
-      localStorage.setItem("zenflow_cart", JSON.stringify(state));
+      localStorage.setItem("essentials_cart", JSON.stringify(state));
     } catch (e) {}
   }, [state]);
 

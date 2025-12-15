@@ -7,11 +7,11 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 const faqs = [
-  { q: "ZENFLOW est-il vraiment gratuit ?", a: "Oui — des sessions gratuites sont disponibles. Nous proposons aussi une offre premium." },
-  { q: "Combien de temps méditer ?", a: "Commencez par 5 minutes par jour et augmentez progressivement." },
-  { q: "Dois-je avoir de l'expérience ?", a: "Aucune expérience requise — nos sessions conviennent à tous les niveaux." },
-  { q: "Puis-je utiliser l'application hors ligne ?", a: "Avec l'abonnement premium, téléchargez des sessions pour une écoute hors ligne." },
-  { q: "Quelles sessions pour le sommeil ?", a: "Les sessions 'Deep Sleep Journey' (20min) et 'Calm Your Mind' (10min) aident au sommeil." },
+  { q: "Livrez-vous à l'international ?", a: "Oui — nous expédions dans la plupart des pays. Les frais et délais sont affichés à la caisse." },
+  { q: "Quelle est la politique de retour ?", a: "Retours gratuits sous 30 jours pour les articles non ouverts. Voir nos Conditions pour plus de détails." },
+  { q: "Quels modes de paiement acceptez-vous ?", a: "Cartes de crédit, Apple Pay, Google Pay et PayPal sont acceptés." },
+  { q: "Fournissez-vous une garantie produit ?", a: "Tous nos produits bénéficient d'une garantie limitée d'un an. Des extensions sont disponibles." },
+  { q: "Comment suivre ma commande ?", a: "Après expédition, vous recevrez un e‑mail avec un numéro de suivi et un lien pour suivre la livraison." },
 ];
 
 
@@ -35,7 +35,7 @@ export default function FAQ() {
             <h1 className="text-5xl md:text-6xl font-display font-light mb-6">
               Foire aux <span className="text-gradient font-semibold">Questions</span>
             </h1>
-            <p className="text-lg text-foreground/70">Trouvez des réponses aux questions fréquentes sur ZENFLOW</p>
+            <p className="text-lg text-foreground/70">Trouvez des réponses aux questions fréquentes sur ESSENTIALS</p>
           </motion.div>
         </div>
       </section>

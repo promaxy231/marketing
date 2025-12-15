@@ -90,7 +90,7 @@ export default function Contact() {
           <ScrollReveal direction="right">
             <div className="space-y-8">
               {[
-                { icon: Mail, title: "Email", desc: "support@zenflow.app" },
+                { icon: Mail, title: "Email", desc: "support@essentials.com" },
                 { icon: MessageSquare, title: "Live Chat", desc: "Available 9am-9pm EST daily" },
                 { icon: Heart, title: "Community", desc: "Join 5M+ users on the platform" }
               ].map((item, i) => (

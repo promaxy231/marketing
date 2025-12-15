@@ -7,15 +7,15 @@ import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const challenges = [
-  { title: "30-Day Calm Challenge", members: 12500, progress: 65, emoji: "🧘" },
-  { title: "Sleep Better Week", members: 8300, progress: 42, emoji: "😴" },
-  { title: "Stress-Free September", members: 15200, progress: 78, emoji: "🌿" },
+  { title: "Top Rated Reviews", members: 12500, progress: 65, emoji: "⭐" },
+  { title: "Best Setup Photos", members: 8300, progress: 42, emoji: "📸" },
+  { title: "Customer Showcase", members: 15200, progress: 78, emoji: "🛍️" },
 ];
 
 const posts = [
-  { author: "Sarah", avatar: "S", text: "Just completed my 100th meditation! Feeling amazing 🙌", likes: 342, replies: 28 },
-  { author: "James", avatar: "J", text: "This community saved my mental health. Thank you all 💜", likes: 1205, replies: 89 },
-  { author: "Maya", avatar: "M", text: "First meditation ever today. Already feeling more present!", likes: 456, replies: 45 },
+  { author: "Sarah", avatar: "S", text: "The Chronograph Elite exceeded my expectations — flawless build and finish.", likes: 342, replies: 28 },
+  { author: "James", avatar: "J", text: "Incredible sound from The Acoustics Master. Worth every penny.", likes: 1205, replies: 89 },
+  { author: "Maya", avatar: "M", text: "Fast shipping and premium packaging. Highly recommend ESSENTIALS.", likes: 456, replies: 45 },
 ];
 
 const leaders = [
@@ -40,9 +40,9 @@ export default function Community() {
             className="text-center max-w-2xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-display font-light mb-6">
-              Meditate <span className="text-gradient font-semibold">together</span>
+              Connect <span className="text-gradient font-semibold">with ESSENTIALS</span>
             </h1>
-            <p className="text-lg text-foreground/70">Join 5 million people sharing their wellness journey. Connect, inspire, and grow together.</p>
+            <p className="text-lg text-foreground/70">Join our community of discerning customers — share reviews, tips, and inspiration.</p>
           </motion.div>
         </div>
       </section>
@@ -52,9 +52,9 @@ export default function Community() {
         <div className="container max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { label: "Active Members", value: "5M+", icon: Users },
-              { label: "Posts Today", value: "24.5K", icon: MessageCircle },
-              { label: "Meditations Shared", value: "12M+", icon: Heart },
+              { label: "Active Customers", value: "500K+", icon: Users },
+              { label: "Reviews Today", value: "1.2K", icon: MessageCircle },
+              { label: "Products Sold", value: "120K+", icon: Heart },
               { label: "Growth This Month", value: "+18%", icon: TrendingUp },
             ].map((stat, i) => (
               <motion.div
@@ -87,7 +87,7 @@ export default function Community() {
                 viewport={{ once: true }}
               >
                 <h3 className="text-4xl font-display font-semibold text-white mb-3">Feel the Connection</h3>
-                <p className="text-white/80 text-lg">5 million meditators in harmony</p>
+                <p className="text-white/80 text-lg">Our community shares product reviews, setup tips, and curated experiences.</p>
               </motion.div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Community() {
       {/* Challenges */}
       <section className="py-16 px-6 relative">
         <div className="container max-w-6xl mx-auto relative z-10">
-          <h2 className="text-3xl font-display font-semibold mb-8 text-gradient">Community Challenges</h2>
+          <h2 className="text-3xl font-display font-semibold mb-8 text-gradient">Community Highlights</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {challenges.map((challenge, i) => (
               <motion.div
@@ -130,7 +130,7 @@ export default function Community() {
       {/* Leaderboard */}
       <section className="py-16 px-6 bg-gradient-to-b from-primary/5 to-transparent">
         <div className="container max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold mb-8">Meditation Streaks</h2>
+          <h2 className="text-3xl font-display font-semibold mb-8">Top Contributors</h2>
           <div className="space-y-3">
             {leaders.map((leader, i) => (
               <motion.div
@@ -147,7 +147,7 @@ export default function Community() {
                   </div>
                   <div>
                     <h3 className="font-semibold">{leader.name}</h3>
-                    <p className="text-sm text-foreground/60">🔥 {leader.streak} day streak</p>
+                      <p className="text-sm text-foreground/60">⭐ {leader.streak} community points</p>
                   </div>
                 </div>
                 <div className="text-right">
@@ -162,7 +162,7 @@ export default function Community() {
       {/* Posts Feed */}
       <section className="py-16 px-6">
         <div className="container max-w-6xl mx-auto">
-          <h2 className="text-3xl font-display font-semibold mb-8">Community Stories</h2>
+          <h2 className="text-3xl font-display font-semibold mb-8">Customer Stories</h2>
           <div className="space-y-4">
             {posts.map((post, i) => (
               <motion.div
@@ -182,7 +182,7 @@ export default function Community() {
                     <p className="text-sm text-foreground/60">Just now</p>
                   </div>
                 </div>
-                <p className="text-foreground/80 mb-4">{post.text}</p>
+                    <p className="text-foreground/80 mb-4">{post.text}</p>
                 <div className="flex gap-6 pt-4 border-t border-foreground/10 text-sm text-foreground/60">
                   <button className="hover:text-primary transition-colors">{post.likes} Likes</button>
                   <button className="hover:text-primary transition-colors">{post.replies} Replies</button>

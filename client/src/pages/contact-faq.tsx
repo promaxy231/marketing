@@ -7,9 +7,9 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { FloatingBubbles } from "@/components/animations/FloatingBubbles";
 
 const faqs = [
-  { q: "ZENFLOW est-il vraiment gratuit ?", a: "Oui — des sessions gratuites sont disponibles. Nous proposons aussi une offre premium." },
-  { q: "Combien de temps méditer ?", a: "Commencez par 5 minutes par jour et augmentez progressivement." },
-  { q: "Puis-je méditer hors ligne ?", a: "Avec l'abonnement premium, téléchargez les sessions pour une écoute hors ligne." },
+  { q: "Quels sont vos délais de livraison ?", a: "Les délais varient selon la destination — typiquement 3–10 jours ouvrés pour la plupart des pays." },
+  { q: "Puis-je retourner un produit ?", a: "Oui — retours gratuits dans les 30 jours pour les articles non ouverts. Voir notre politique de retour." },
+  { q: "Offrez-vous des codes promo ou remises ?", a: "Abonnez-vous à notre newsletter pour recevoir offres exclusives et accès anticipé aux ventes." },
 ];
 
 export default function ContactFAQ() {
