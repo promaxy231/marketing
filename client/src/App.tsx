@@ -13,6 +13,8 @@ import FAQ from "@/pages/faq";
 import Pricing from "@/pages/pricing";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
+import Panier from "@/pages/panier";
+import ContactFAQ from "@/pages/contact-faq";
 
 function Router() {
   return (
@@ -23,6 +25,8 @@ function Router() {
       <Route path="/community" component={Community} />
       <Route path="/blog" component={Blog} />
       <Route path="/faq" component={FAQ} />
+      <Route path="/contact-faq" component={ContactFAQ} />
+      <Route path="/panier" component={Panier} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
