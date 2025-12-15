@@ -1,6 +1,7 @@
 import { Link } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import { useCart } from "@/lib/cart";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,10 +42,15 @@ export function Navbar() {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           <button className="hidden sm:inline px-6 py-2 text-sm font-outfit font-semibold text-amber-400 hover:text-amber-300 transition-colors">
             Sign In
           </button>
+          <a href="/panier" className="relative inline-flex items-center gap-2 px-4 py-2 text-sm font-outfit font-semibold text-slate-200 hover:text-amber-300 transition-colors">
+            <ShoppingCart className="w-5 h-5" />
+            <span className="hidden sm:inline">Panier</span>
+            <CartCountBadge />
+          </a>
           <button className="px-6 py-2 bg-amber-600 hover:bg-amber-500 text-black text-sm font-outfit font-semibold rounded-full transition-all shadow-lg shadow-amber-600/20">
             Shop Now
           </button>
@@ -82,4 +88,17 @@ export function Navbar() {
       )}
     </nav>
   );
+}
+
+function CartCountBadge() {
+  try {
+    const { state } = useCart();
+    const count = state.items.reduce((s, i) => s + i.qty, 0);
+    if (count === 0) return null;
+    return (
+      <span className="absolute -top-1 -right-3 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">{count}</span>
+    );
+  } catch (e) {
+    return null;
+  }
 }
