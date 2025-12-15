@@ -36,7 +36,7 @@ export function Navbar() {
               className="text-foreground/90 hover:text-primary/70 transition-colors relative group"
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary/60 transition-all group-hover:w-full" />
             </a>
           ))}
         </div>
@@ -55,7 +55,7 @@ export function Navbar() {
             Shop Now
           </button>
           <button 
-            className="md:hidden text-amber-300"
+            className="md:hidden text-primary/70"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
